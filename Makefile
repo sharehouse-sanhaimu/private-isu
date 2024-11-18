@@ -12,3 +12,8 @@ benchmarker/userdata/img.zip:
 benchmarker/userdata/img: benchmarker/userdata/img.zip
 	cd benchmarker/userdata && \
 	unzip -qq -o img.zip
+
+create-nginx-link
+	mv /etc/nginx /etc/nginx.bak
+	rm -r /etc/nginx
+	ln -s /home/$USER/private_isu/etc/nginx/ /etc/
