@@ -12,3 +12,13 @@ benchmarker/userdata/img.zip:
 benchmarker/userdata/img: benchmarker/userdata/img.zip
 	cd benchmarker/userdata && \
 	unzip -qq -o img.zip
+
+create-nginx-link:
+	mv /etc/nginx /etc/nginx.bak
+	ln -s /home/isucon/private_isu/etc/nginx/ /etc/
+	systemctl restart nginx.service
+
+delete-nginx-link:
+	rm /etc/nginx
+
+
