@@ -17,3 +17,4 @@ create-nginx-link
 	mv /etc/nginx /etc/nginx.bak
 	rm -r /etc/nginx
 	ln -s /home/$USER/private_isu/etc/nginx/ /etc/
+	systemctl restart nginx.service
