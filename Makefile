@@ -21,4 +21,14 @@ create-nginx-link:
 delete-nginx-link:
 	rm /etc/nginx
 
+create-mysql-link:
+	sudo ln -s /home/isucon/private-isu/etc/mysql/conf.d/my.cnf/ /etc/mysql/conf.d/
+
+list-daemon:
+	mkdir -p daemon_list
+	timestamp=$(date "+%Y%m%d_%H%M%S")
+	systemctl list-units --type=service --state=running
+
+lint-mysql:
+	mysqld --validate-config
 
