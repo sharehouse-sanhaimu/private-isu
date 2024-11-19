@@ -29,3 +29,6 @@ list-daemon:
 	timestamp=$(date "+%Y%m%d_%H%M%S")
 	systemctl list-units --type=service --state=running
 
+lint-mysql:
+	mysqld --validate-config
+
