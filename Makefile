@@ -21,4 +21,6 @@ create-nginx-link:
 delete-nginx-link:
 	rm /etc/nginx
 
+create-mysql-link:
+	sudo ln -s etc/mysql/conf.d/my.cnf/ /etc/mysql/conf.d/
 
