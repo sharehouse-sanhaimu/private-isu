@@ -22,3 +22,6 @@ delete-nginx-link:
 	rm /etc/nginx
 
 
+lint-mysql:
+	mysqld --validate-config
+
