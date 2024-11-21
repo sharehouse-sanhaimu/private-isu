@@ -25,10 +25,14 @@ create-mysql-link:
 	sudo ln -s /home/isucon/private-isu/etc/mysql/conf.d/my.cnf/ /etc/mysql/conf.d/
 
 list-daemon:
-	mkdir -p daemon_list
-	timestamp=$(date "+%Y%m%d_%H%M%S")
 	systemctl list-units --type=service --state=running
 
 lint-mysql:
 	mysqld --validate-config
 
+lint-nginx:
+	nginx -t 
+
+new-nginx-log:
+	mv /var/log/nginx/access.log /var/log/nginx/access_$(shell date "+%Y%m%d_%H%M%S").log
+	systemctl reload nginx
