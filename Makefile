@@ -35,3 +35,4 @@ lint-nginx:
 
 new-nginx-log:
 	mv /var/log/nginx/access.log /var/log/nginx/access_$(shell date "+%Y%m%d_%H%M%S").log
+	sudo systemctl reload nginx
